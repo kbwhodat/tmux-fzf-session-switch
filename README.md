@@ -39,16 +39,35 @@ Becoming Chad, have super black magic power like [tmux-fzf](https://github.com/s
 - [Tmux >= 3.3a](https://github.com/brokenricefilms/tmux-fzf-session-switch/pull/5/files) `pop-up menu`
 - [fzf](https://github.com/junegunn/fzf)
 
-## Getting started
+## Getting Started
 
-- Install the [tpm](https://github.com/tmux-plugins/tpm) Tmux Plugin Manager.
-- Put `set -g @plugin 'brokenricefilms/tmux-fzf-session-switch'` into your tmux config
-- Use tpm to install this plugin. Default you can press `prefix + I` (`I` is
-  `shift + i` = I)
-- `Prefix + Ctrl + f`: Open up fzf in a new tab. (e.g. prefix = ctrl + b. Hold ctrl -> press b -> press f -> done)
-- If you type a name that doesn't exist, you will be prompted to create it.
+1. **Install the Tmux Plugin Manager (TPM):**
 
-> If this name conflicts with another session name -> add a double/single quotes `'example'`
+   Follow the instructions at [https://github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm) to install TPM.
+
+2. **Add the Plugin to Your Tmux Config:**
+
+   Add the following line to your `~/.tmux.conf` file:
+
+   ```
+   set -g @plugin 'brokenricefilms/tmux-fzf-session-switch'
+   ```
+
+3. **Install the Plugin:**
+
+   Use TPM to install the plugin. By default, you can press `prefix + I` (where `prefix` is your tmux prefix key, usually `Ctrl + b`, and `I` is `Shift + i`).
+
+4. **Open FZF for Session Switching:**
+
+   Press `prefix + Ctrl + f` to open FZF in a new tab. (For example, if your prefix is `Ctrl + b`, hold `Ctrl`, press `b`, then press `f`).
+
+   > **Known Issue:** This plugin requires more than one session to function correctly. If you only have one session, the windows won't appear in the FZF list
+
+5. **Creating New Sessions:**
+
+   If you type a session name that doesn't exist, you will be prompted to create it.
+
+   * **Handling Name Conflicts:** If the name conflicts with an existing session, enclose it in double or single quotes (e.g., `'example'`).
 
 ## Customize
 
