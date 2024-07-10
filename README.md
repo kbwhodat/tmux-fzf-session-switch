@@ -2,6 +2,10 @@
 
 ![preview img](/img/preview.png)
 
+## Video demo
+
+[![](/img/video-demo-thumbnail.jpg)](https://youtu.be/ec3-jEmmG3E)
+
 ## QnA
 
 ### Features:
