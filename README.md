@@ -9,12 +9,12 @@
 1. Session + window name fuzzy search and switch.
 2. Create a new session
 
-### Reason don't use this plugin?
+### What are the reasons not to use this plugin?
 
 1. [tmux-fzf](https://github.com/sainnhe/tmux-fzf) have more black magic.
 2. [tmux-fzf](https://github.com/sainnhe/tmux-fzf) have single shortcut for [switch session](https://github.com/sainnhe/tmux-fzf/issues/6) and many function [tmux-fzf](https://github.com/sainnhe/tmux-fzf) had.
 
-### Reason for using this plugin?
+### What are the reasons for using this plugin?
 
 One single shortcut for switching between sessions, windows, and creating new sessions.
 
@@ -22,7 +22,7 @@ This creates a simple workflow: 'I want to go to [session/window name], press th
 
 Or,
 
-'I want to go to [session/window name], press the shortcut, type the name, uh oh, it doesn't exist.
+I want to go to [session/window name], press the shortcut, type the name, uh oh, it doesn't exist.
 
 Okay, press enter to create a new session with that name.
 
