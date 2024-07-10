@@ -114,7 +114,7 @@ set -g @fzf-goto-win-height 20
 **Using in the Command Line**
 
 ```bash
-function tmuxSessionSwitch() {
+function tmux_session_switch() {
   session=$(tmux list-windows -a | fzf | sed 's/: .*//g')
   tmux switch-client -t "$session"
 }
