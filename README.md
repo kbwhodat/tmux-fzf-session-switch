@@ -4,10 +4,10 @@
 
 ## QnA
 
-### Can do?
+### Features:
 
-1. Session + window name fuzzy search and switch.
-2. Create a new session
+1. Fuzzy search and switch sessions and windows.
+2. Create new sessions.
 
 ### What are the reasons not to use this plugin?
 
