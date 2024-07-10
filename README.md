@@ -16,27 +16,25 @@
 
 ### What are the reasons for using this plugin?
 
-One single shortcut for switching between sessions, windows, and creating new sessions.
+This plugin offers a single shortcut for switching between sessions, windows, and creating new sessions.
 
-This creates a simple workflow: 'I want to go to [session/window name], press the shortcut, type the name, and press enter. Done!'
+This creates a simple workflow: "I want to go to [session/window name], press the shortcut, type the name, and press enter. Done!"
 
-Or,
+Or:
 
-I want to go to [session/window name], press the shortcut, type the name, uh oh, it doesn't exist.
-
-Okay, press enter to create a new session with that name.
+"I want to go to [session/window name], press the shortcut, type the name. Uh oh, it doesn't exist. Okay, press `enter` to create a new session with that name."
 
 ### Plan
 
-Blazingly fast Tmux workflow, built muscle memory, better DX.
+Blazingly fast Tmux workflow, built muscle memory, better developer experience.
 
 ### Not in plan
 
-Becoming Chad, have super black magic power like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
+Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
 
 ## Requirements
 
-- [Tmux >= 3.3a](https://github.com/brokenricefilms/tmux-fzf-session-switch/pull/5/files) `pop-up menu`
+- [Tmux >= 3.3a](https://github.com/brokenricefilms/tmux-fzf-session-switch/pull/5/files) (for the `pop-up menu` feature)
 - [fzf](https://github.com/junegunn/fzf)
 
 ## Getting Started
