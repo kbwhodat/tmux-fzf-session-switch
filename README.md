@@ -111,7 +111,7 @@ set -g @fzf-goto-win-height 20
 
 ## Tips
 
-### Use in command line
+**Using in the Command Line**
 
 ```bash
 function tmuxSessionSwitch() {
@@ -133,25 +133,8 @@ function tmux_kill_uname_session() {
 }
 ```
 
-> use with `clear` command is the best
+Using this with the `clear` command is effective:
 
 ```
 alias clear='tmux_kill_uname_session ; clear -x'
 ```
-
-### Easy to press
-
-- In my use case, I don't use this keybinding for switch sessions, I use `hold space + ;` mapping for `hold Ctrl + a + f`
-- How can I use `hold space + ;` mapping?
-  -> I use [input remapper](https://github.com/sezanzeb/input-remapper), also you can see [my dotfiles](https://github.com/brokenricefilms/dotfiles)
-
-> config in GUI
-
-```python
-space: if_single(key(KEY_SPACE), ,timeout=10000)
-space + semicolon: KEY_RIGHTCTRL+a+f
-```
-
-![input remapper][img_input_remapper]
-
-[img_input_remapper]: ./img/input_remapper.png
