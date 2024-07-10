@@ -83,7 +83,7 @@ set-option -g @fzf-goto-session-only 'true'
 set -g @fzf-goto-session 'key binding'
 ```
 
-> Eg. to override the default session switcher in tmux available at `prefix` + s`:
+> Eg. to override the default session switcher in tmux available at `prefix + s`:
 
 ```bash
 set -g @fzf-goto-session 's'
