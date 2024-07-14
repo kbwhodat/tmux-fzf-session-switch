@@ -63,8 +63,6 @@ Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
 
    Press `prefix + Ctrl + f` to open FZF in a new tab. (For example, if your prefix is `Ctrl + b`, hold `Ctrl`, press `b`, then press `f`).
 
-   > **Known Issue:** This plugin requires more than one session to function correctly. If you only have one session, the windows won't appear in the FZF list
-
 5. **Creating New Sessions:**
 
    If you type a session name that doesn't exist, you will be prompted to create it.
