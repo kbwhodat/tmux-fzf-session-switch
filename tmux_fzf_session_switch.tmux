@@ -3,11 +3,11 @@
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-default_key_bindings_goto="C-f"
+default_key_bindings_goto="s"
 default_width=55
 default_height=10
 default_without_prefix=false
-default_search_session_only=false
+default_search_session_only=true
 
 tmux_option_goto="@fzf-goto-session"
 tmux_option_goto_without_prefix="@fzf-goto-session-without-prefix"
