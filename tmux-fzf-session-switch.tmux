@@ -1,4 +1,5 @@
-#!/nix/store/5jw69mbaj5dg4l2bj58acg3gxywfszpj-bash-5.2p26/bin/bash
+#!/etc/profiles/per-user/katob/bin/bash
+
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
