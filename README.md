@@ -4,7 +4,7 @@
 
 ## Video demo
 
-[![](/img/video-demo-thumbnail.jpg)](https://youtu.be/ec3-jEmmG3E)
+[![](/img/video-demo-thumbnail.jpg)](https://www.youtube.com/watch?v=70jzB1SU5as)
 
 ## QnA
 
