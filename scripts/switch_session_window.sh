@@ -3,28 +3,35 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 function main {
-  local sessions
-  local session
-  local query
-  local sess_arr
-  local retval
-  sessions=$(tmux list-windows -a | 
-    fzf --exit-0 --print-query --reverse)
-  retval=$?
+    local windows
+    local window
+    local query
+    local win_arr
+    local retval
 
-  IFS=$'\n' read -rd '' -a sess_arr <<<"$sessions"
+    local fzf_command=(fzf --exit-0 --print-query --reverse --delimiter=":" --with-nth=1,2,4)
 
-  session=$(echo ${sess_arr[1]} | sed 's/: .*//g')
-  query=${sess_arr[0]}
-
-  if [ $retval == 0 ]; then
-    if [ "$session" == "" ]; then
-        session=$(echo "$query" | sed 's/: .*//g')
+    if [ "${PREVIEW_ENABLED}" = "1" ]; then
+        fzf_command+=(--preview "$CURRENT_DIR/preview_window.sh {1}" --preview-window=right:60%)
     fi
-    tmux switch-client -t "$session"
-  elif [ $retval == 1 ]; then
-    tmux command-prompt -b -p "Press enter to create and go to [$query] session" \
-      "run '$CURRENT_DIR/make_new_session.sh \"$query\" \"%1\"'"
-  fi
+
+    windows=$(tmux list-windows -a -F "#{session_name}:#{window_index}: #{window_name}" | "${fzf_command[@]}")
+    retval=$?
+
+    IFS=$'\n' read -rd '' -a win_arr <<<"$windows"
+
+    window="${win_arr[1]}"
+    query="${win_arr[0]}"
+
+    if [ $retval -eq 0 ]; then
+        if [ -z "$window" ]; then
+            window="$query"
+        fi
+        tmux switch-client -t "$window"
+    elif [ $retval -eq 1 ]; then
+        tmux command-prompt -b -p "Press enter to create and go to [$query] window" \
+            "run '$CURRENT_DIR/make_new_window.sh \"$query\" \"%1\"'"
+    fi
 }
+
 main
