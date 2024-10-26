@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#TODO: add tests and help instructions  
-
 session_name="${1}"
 
 # Get the session ID using the session name
