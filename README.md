@@ -115,7 +115,7 @@ set -g @fzf-goto-win-height 20
 
 ![](mF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI3VDA4NDcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJmM2M3MzMyN2ZhYzA2ODBlZjdjYmVkMjJhMDkyYTUwZTRiN2NkYTVhZjYzMDc1YzMzM2NlNDdlMTM3OWJkODgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.h2rnkz_BCWbntCP-I0gWFK5eV8t0YQYtAXN4wtiU5TA)
 
-Enable this option
+**Enable this option**
 ```bash
 set -g @fzf-goto-preview-enabled 'true'
 ```
