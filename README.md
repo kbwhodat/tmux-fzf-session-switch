@@ -71,7 +71,7 @@ Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
 
 ## Customize
 
-> 🫰Thanks to [@erikw](https://github.com/erikw)
+> 🫰Thanks to [@erikw](https://github.com/erikw) and [adia-dev](https://github.com/adia-dev)
 
 ### Search session only
 
@@ -109,6 +109,16 @@ set -g @fzf-goto-win-height HEIGHT
 ```bash
 set -g @fzf-goto-win-width 70
 set -g @fzf-goto-win-height 20
+```
+
+### Preview window on the side
+
+![](mF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI3VDA4MzU1MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc1NDJlZTRmOGUxZTMxMWM1ODE0NjE5Yzk2ZmU3MGNlMGM1YzJmOTVjMGNmZTlkZTU1NzcyZDE3ZDQ3MDczYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-2sys0nll783LYb7id7ZtKRFEJCzC22g0JQDsXdTPeA)
+
+```bash
+set -g @fzf-goto-preview-enabled 'true'
+set-g @fzf-goto-preview-width-preview WIDTH
+set-g @fzf-goto-preview-height-preview HEIGH
 ```
 
 ## Tips
