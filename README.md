@@ -113,10 +113,15 @@ set -g @fzf-goto-win-height 20
 
 ### Preview window on the side
 
-![](https://private-user-images.githubusercontent.com/63371699/380459035-512b0025-9d98-4895-978a-05bc44d6342a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzAwMTkxMzIsIm5iZiI6MTczMDAxODgzMiwicGF0aCI6Ii82MzM3MTY5OS8zODA0NTkwMzUtNTEyYjAwMjUtOWQ5OC00ODk1LTk3OGEtMDViYzQ0ZDYzNDJhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMjclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI3VDA4NDcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJmM2M3MzMyN2ZhYzA2ODBlZjdjYmVkMjJhMDkyYTUwZTRiN2NkYTVhZjYzMDc1YzMzM2NlNDdlMTM3OWJkODgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.h2rnkz_BCWbntCP-I0gWFK5eV8t0YQYtAXN4wtiU5TA)
+![](mF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDI3VDA4NDcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJmM2M3MzMyN2ZhYzA2ODBlZjdjYmVkMjJhMDkyYTUwZTRiN2NkYTVhZjYzMDc1YzMzM2NlNDdlMTM3OWJkODgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.h2rnkz_BCWbntCP-I0gWFK5eV8t0YQYtAXN4wtiU5TA)
 
+Enable this option
 ```bash
 set -g @fzf-goto-preview-enabled 'true'
+```
+
+**Custom**
+```bash
 set-g @fzf-goto-preview-width-preview WIDTH
 set-g @fzf-goto-preview-height-preview HEIGH
 ```
