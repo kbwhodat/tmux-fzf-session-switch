@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
-window_id="${1}"
+window_spec="${1}"
+IFS=':' read -r session_name window_index window_name <<< "$window_spec"
 
-if [ -z "${window_id}" ]; then
-  echo "No window ID provided"
+if [ -z "${session_name}" ] || [ -z "${window_index}" ]; then
+  echo "Invalid window specification: '${window_spec}'"
   exit 1
 fi
 
-# Get the active pane of the window
-active_pane=$(tmux list-panes -t "${window_id}" -F '#{pane_id} #{pane_active}' | awk '$2 == "1" {print $1}')
+target="${session_name}:${window_index}"
+active_pane=$(tmux list-panes -t "${target}" -F '#{pane_id} #{pane_active}' | awk '$2 == "1" {print $1}')
 
 if [ -z "${active_pane}" ]; then
-  echo "No active pane found for window ${window_id}"
+  echo "No active pane found for window ${target}"
   exit 1
 fi
 
