@@ -1,4 +1,4 @@
-> [!CAUTION]
+> [!IMPORTANT]
 > Looking for a maintainer: cutbypham@gmail.com
 
 # TMUX FZF Session Switch
