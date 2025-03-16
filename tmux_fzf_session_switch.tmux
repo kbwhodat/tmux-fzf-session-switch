@@ -2,7 +2,7 @@
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-default_key_bindings_goto="s"
+default_key_bindings_goto="s w"
 default_width=55
 default_height=10
 default_width_preview=80
@@ -57,31 +57,14 @@ function set_goto_session_bindings {
         preview_option="PREVIEW_ENABLED=0"
     fi
 
-    if [ "$search_session_only" = false ]; then
-        if [ "$without_prefix" = true ]; then
-            local key
-            for key in $key_bindings; do
-                tmux bind -n "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session_window.sh"
-            done
-        else
-            local key
-            for key in $key_bindings; do
-                tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session_window.sh"
-            done
-        fi
-    else
-        if [ "$without_prefix" = true ]; then
-            local key
-            for key in $key_bindings; do
-                tmux bind -n "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
-            done
-        else
-            local key
-            for key in $key_bindings; do
-                tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
-            done
-        fi
-    fi
+    for key in $key_bindings; do
+      if [ "$key" = "w" ]; then
+        tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session_window.sh"
+      elif [ "$key" = "s" ]; then
+        tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
+      fi
+    done
+
 }
 
 function main {
