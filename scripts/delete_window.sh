@@ -33,8 +33,7 @@ function main {
         local session_name="${session_window[0]}"
         local window_index="${session_window[1]}"
 
-        # Confirm the deletion. This will show a prompt in tmux before deleting.
-        tmux confirm-before -p "Are you sure you want to delete window [$session_name:$window_index]? (y/n)" "run 'tmux kill-window -t $session_name:$window_index'"
+        tmux kill-window -t $session_name:$window_index
     fi
 }
 

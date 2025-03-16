@@ -31,7 +31,7 @@ function main {
         session_details=(${session//:/ })
         local session_name="${session_details[0]}"
         # Confirm deletion before killing the session
-        tmux confirm-before -p "Are you sure you want to delete session [$session_name]? (y/n)" "run 'tmux kill-session -t $session_name'"
+        tmux kill-session -t $session_name
     fi
 }
 
