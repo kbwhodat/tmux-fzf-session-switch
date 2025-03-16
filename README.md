@@ -1,10 +1,14 @@
+> [!IMPORTANT]
+> Looking for a maintainer: cutbypham@gmail.com
+
 # TMUX FZF Session Switch
 
-![preview img](/img/preview.png)
+<img width="700" alt="380459035-512b0025-9d98-4895-978a-05bc44d6342a" src="https://github.com/user-attachments/assets/f2f654ba-22c9-45ca-87a2-07eafd793b51">
+
 
 ## Video demo
 
-[![](/img/video-demo-thumbnail.jpg)](https://youtu.be/ec3-jEmmG3E)
+[![](/img/video-demo-thumbnail.jpg)](https://www.youtube.com/watch?v=70jzB1SU5as)
 
 ## QnA
 
@@ -38,7 +42,7 @@ Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
 
 ## Requirements
 
-- [Tmux >= 3.3a](https://github.com/brokenricefilms/tmux-fzf-session-switch/pull/5/files) (for the `pop-up menu` feature)
+- [Tmux >= 3.3a](https://github.com/vndmp4/tmux-fzf-session-switch/pull/5/files) (for the `pop-up menu` feature)
 - [fzf](https://github.com/junegunn/fzf)
 
 ## Getting Started
@@ -52,7 +56,7 @@ Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
    Add the following line to your `~/.tmux.conf` file:
 
    ```
-   set -g @plugin 'brokenricefilms/tmux-fzf-session-switch'
+   set -g @plugin 'vndmp4/tmux-fzf-session-switch'
    ```
 
 3. **Install the Plugin:**
@@ -71,7 +75,7 @@ Having multiple features like [tmux-fzf](https://github.com/sainnhe/tmux-fzf)
 
 ## Customize
 
-> 🫰Thanks to [@erikw](https://github.com/erikw)
+> 🫰Thanks to [@erikw](https://github.com/erikw) and [adia-dev](https://github.com/adia-dev)
 
 ### Search session only
 
@@ -109,6 +113,21 @@ set -g @fzf-goto-win-height HEIGHT
 ```bash
 set -g @fzf-goto-win-width 70
 set -g @fzf-goto-win-height 20
+```
+
+### Preview window on the side
+
+<img width="500" alt="380459035-512b0025-9d98-4895-978a-05bc44d6342a" src="https://github.com/user-attachments/assets/439bb47d-52dc-41d0-882c-5625dcae3f41">
+
+**Enable this option**
+```bash
+set -g @fzf-goto-preview-enabled 'true'
+```
+
+**Custom**
+```bash
+set-g @fzf-goto-preview-width-preview WIDTH
+set-g @fzf-goto-preview-height-preview HEIGH
 ```
 
 ## Tips
