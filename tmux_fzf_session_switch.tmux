@@ -2,7 +2,7 @@
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-default_key_bindings_goto="s w"
+default_key_bindings_goto="s w D"
 default_width=55
 default_height=10
 default_width_preview=80
@@ -62,6 +62,11 @@ function set_goto_session_bindings {
         tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session_window.sh"
       elif [ "$key" = "s" ]; then
         tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
+      elif [ "$key" = "D" ]; then
+        tmux bind D switch-client -T fzf-delete
+        tmux bind -T fzf-delete w run-shell "$CURRENT_DIR/scripts/delete_window.sh"
+        tmux bind -T fzf-delete k run-shell "$CURRENT_DIR/scripts/delete_session.sh"
+        tmux bind -T fzf-delete Escape switch-client -T prefix
       fi
     done
 
@@ -70,4 +75,5 @@ function set_goto_session_bindings {
 function main {
     set_goto_session_bindings
 }
+
 main

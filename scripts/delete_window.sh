@@ -8,29 +8,33 @@ function main {
     local query
     local win_arr
     local retval
+    # We list session name, window index, and window name
     local fzf_command=(fzf --exit-0 --print-query --reverse --delimiter=":" --with-nth=1,2,3)
-    
+
     if [ "${PREVIEW_ENABLED}" = "1" ]; then
         fzf_command+=(--preview "$CURRENT_DIR/preview_window.sh {}" --preview-window=right:60%)
     fi
-    
+
+    # List all windows in the format session:window_index:window_name
     windows=$(tmux list-windows -a -F "#{session_name}:#{window_index}:#{window_name}" | "${fzf_command[@]}")
     retval=$?
-    
+
     IFS=$'\n' read -rd '' -a win_arr <<<"$windows"
     window="${win_arr[1]}"
     query="${win_arr[0]}"
-    
+
     if [ $retval -eq 0 ]; then
+        # If no window field is returned, default to using the query line
         if [ -z "$window" ]; then
             window="$query"
         fi
+        # Split the selected line on the delimiter ':'
         session_window=(${window//:/ })
-        tmux switch-client -t "${session_window[0]}:${session_window[1]}"
-    elif [ $retval -eq 1 ]; then
-        session_name=$(tmux display-message -p "#{session_name}")
-        tmux command-prompt -b -p "Press enter to create window [$query]" \
-            "run '$CURRENT_DIR/make_new_window.sh \"$query\" \"$session_name\"'"
+        local session_name="${session_window[0]}"
+        local window_index="${session_window[1]}"
+
+        # Confirm the deletion. This will show a prompt in tmux before deleting.
+        tmux confirm-before -p "Are you sure you want to delete window [$session_name:$window_index]? (y/n)" "run 'tmux kill-window -t $session_name:$window_index'"
     fi
 }
 
