@@ -63,10 +63,7 @@ function set_goto_session_bindings {
       elif [ "$key" = "s" ]; then
         tmux bind "$key" display-popup -w "$width" -h "$height" -y 15 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
       elif [ "$key" = "D" ]; then
-        tmux bind D switch-client -T fzf-delete
-        tmux bind -T fzf-delete w run-shell "$CURRENT_DIR/scripts/delete_window.sh"
-        tmux bind -T fzf-delete k run-shell "$CURRENT_DIR/scripts/delete_session.sh"
-        tmux bind -T fzf-delete Escape switch-client -T prefix
+        tmux bind D command-prompt -p "Delete (w)indow or (s)ession?" "run-shell \"if [ '%%' = 'w' ]; then $CURRENT_DIR/scripts/delete_window.sh; elif [ '%%' = 's' ]; then $CURRENT_DIR/scripts/delete_session.sh; else tmux display-message 'Invalid selection'; fi\""
       fi
     done
 
