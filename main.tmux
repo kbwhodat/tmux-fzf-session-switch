@@ -9,7 +9,7 @@ default_width_preview=80
 default_height_preview=20
 default_without_prefix=false
 default_search_session_only=true
-default_preview_enabled=false
+default_preview_enabled=true
 
 tmux_option_goto="@fzf-goto-session"
 tmux_option_goto_without_prefix="@fzf-goto-session-without-prefix"
