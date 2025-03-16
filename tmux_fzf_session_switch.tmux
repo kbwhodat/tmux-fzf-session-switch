@@ -2,7 +2,7 @@
 
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-default_key_bindings_goto="s w D"
+default_key_bindings_goto="s w d"
 default_width=55
 default_height=15
 default_width_preview=80
@@ -62,7 +62,7 @@ function set_goto_session_bindings {
         tmux bind "$key" display-popup -w "$width" -h "$height" -y 20 -E "$preview_option $CURRENT_DIR/scripts/switch_session_window.sh"
       elif [ "$key" = "s" ]; then
         tmux bind "$key" display-popup -w "$width" -h "$height" -y 20 -E "$preview_option $CURRENT_DIR/scripts/switch_session.sh"
-      elif [ "$key" = "D" ]; then
+      elif [ "$key" = "d" ]; then
         tmux command-prompt -p "Delete (w)indow or (s)ession?" "run-shell '$CURRENT_DIR/scripts/delete_handler.sh %%'"
       fi
     done
